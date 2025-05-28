@@ -20,3 +20,23 @@ Introduces a multi-modal machine learning framework to improve financial forecas
 
 ![image](https://github.com/user-attachments/assets/95b34d0d-c36f-40b5-9946-42bee62d414c)
 
+## Methodology
+
+Our research adopts a quantitative approach, utilizing numerical data from historical market prices, trading volumes, and macroeconomic indicators. The study employs machine learning techniques to analyze and model the relationships between these variables, aiming to enhance predictive accuracy in trading market price forecasting.
+
+Macroeconomic Indicators : 
+1. Interest Rate - Determines monetary policy direction.
+
+2. Consumer Price Index (CPI): Reflects inflationary pressures.
+ 
+3. Non-Farm Payrolls (NFP): Measures employment trends and economic health. 
+
+4. Personal Consumption Expenditures (PCE): Tracks consumer spending behavior. 
+
+5. Gross Domestic Product (GDP): Indicates overall economic growth. 
+
+6. Producer Price Index (PPI): Represents inflation at the producer level.
+
+![image](https://github.com/user-attachments/assets/982d9c12-0a91-4c35-9212-7aa2b0763a59)
+
+
