@@ -9,18 +9,18 @@ title:
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Multi-Modal Data Fusion for Trading Market Price Forecasting
 
 #### Team
 
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-- eNumber, Name, [email](mailto:name@email.com)
-
+- E/19/278, Perera A.P.T.T., [email](mailto:e19452@eng.ac.lk)
+- E/19/349, Sandaruwan K.G.S.T., [email](mailto:e19452@eng.ac.lk)
+- E/19/492, Somawansha M.V.N.L., [email](mailto:e19492@eng.pdn.ac.lk)
+  
 #### Supervisors
 
-- Name, [email](mailto:name@eng.pdn.ac.lk)
-- Name, [email](mailto:name@eng.pdn.ac.lk)
+- Prof. Manjula Sandirigama, [email](mailto:manjula.sandirigama@eng.pdn.ac.lk)
+- Dr. Sampath Deegalla, [email](mailto:sampath@eng.pdn.ac.lk)
 
 #### Table of content
 
