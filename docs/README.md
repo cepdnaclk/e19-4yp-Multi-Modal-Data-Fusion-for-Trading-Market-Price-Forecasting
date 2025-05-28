@@ -34,10 +34,6 @@ title:
 8. [Data Collection](#data-collection)
 9. [High Level Design Architecture](#high-level-design-architecture)
 10. [Links](#links)
-<!-- 10. [Results and Analysis](#results-and-analysis)
-11. [Conclusion](#conclusion)
-12. [Publications](#publications)
-13. [Links](#links) -->
 
 ---
 
