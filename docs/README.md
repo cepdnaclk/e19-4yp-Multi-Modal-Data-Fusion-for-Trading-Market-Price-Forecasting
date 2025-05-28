@@ -43,6 +43,12 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Abstract
+Accurately predicting tradable moments, price entry and exit points, and managing risks is crucial in today’s highly volatile financial markets. Macroeconomic fluctuations and geopolitical factors significantly impact asset prices, making it essential for traders and financial analysts to identify reliable opportunities. Gold (XAU/USD) remains a preferred asset due to its high liquidity and resilience against market manipulation. However, traditional technical analysis methods often struggle to differentiate between genuine breakouts and false signals, leading to inefficient trading decisions and increased risk exposure.
+
+This research develops a machine learning-based approach to distinguishing breakouts from fakeouts by analyzing key market factors. The model takes historical price data, trading volume,    macroeconomic data as inputs. By leveraging multi-modal data fusion, the system captures the relationships between market structure and external economic events to enhance breakout classification. Traders and financial analysts can use this system to improve decision-making by identifying high-probability tradable opportunities while minimizing false signals.
+
+The implementation involves collecting data from trading platforms (MetaTrader 5, Binance API) and economic reports, performing feature engineering, and training a deep learning model—such as LSTM or Transformer—to recognize breakout patterns. By integrating technical and macroeconomic factors, this research aims to provide a data-driven framework for traders to make more informed decisions, reduce risks, and optimize profitability in financial markets.
+
 
 ## Related works
 
