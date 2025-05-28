@@ -31,7 +31,7 @@ title:
 5. [Aim](#aim)
 6. [Proposed Solution](#proposed-solution)
 7. [Research Methodology](#research-methodology)
-  7.1 [Data Collection](#data-collection)
+7.1 [Data Collection](#data-collection)
 9. [Experiment Setup and Implementation](#experiment-setup-and-implementation)
 10. [Results and Analysis](#results-and-analysis)
 11. [Conclusion](#conclusion)
@@ -72,12 +72,19 @@ This is a sample image, to show how to add images to your page. To learn more op
 ![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
 
 • Gold Price Data (XAU/USD): We will collect historical XAU/USD OHLCV (Open, High, Low, Close, Volume) data across multiple timeframes (30-minute, hourly, 4-hourly, daily, weekly, and monthly) using the MetaTrader5 local terminal. This ensures we capture both short-term fluctuations and long-term trends. The data will cover the period from 2015 to 2025.
+
 • Macroeconomic Indicators: These fundamental factors drive long-term price movements and market sentiment. We will focus on:
+
 •	Interest Rate (Federal Reserve Rate): Determines monetary policy direction.
+
 •	Consumer Price Index (CPI): Reflects inflationary pressures.
+
 •	Non-Farm Payrolls (NFP): Measures employment trends and economic health.
+
 •	Personal Consumption Expenditures (PCE): Tracks consumer spending behavior.
+
 •	Gross Domestic Product (GDP): Indicates overall economic growth.
+
 •	Producer Price Index (PPI): Represents inflation at the producer level.
 
    Integration Strategy: Web scraping from Investing.com and manually extracting Federal Reserve statements. Data will be collected for the 2015-2025 range to cover multiple economic cycles.
