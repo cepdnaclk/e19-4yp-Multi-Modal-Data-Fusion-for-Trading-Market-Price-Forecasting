@@ -31,10 +31,9 @@ title:
 5. [Aim](#aim)
 6. [Proposed Solution](#proposed-solution)
 7. [Research Methodology](#research-methodology)
-   
-7.1 [Data Collection](#data-collection)
-8. [High Level Design Architecture](#high-level-design-architecture)
-9. [Links](#links)
+8. [Data Collection](#data-collection)
+9. [High Level Design Architecture](#high-level-design-architecture)
+10. [Links](#links)
 <!-- 10. [Results and Analysis](#results-and-analysis)
 11. [Conclusion](#conclusion)
 12. [Publications](#publications)
@@ -69,6 +68,8 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 
 ## Research Methodology
+   This multi-stage framework for breakout prediction is a comprehensive system that integrates multiple data-driven approaches to enhance trading accuracy. Each module plays a crucial role in processing and analyzing different aspects of financial data, ensuring a well-rounded predictive model. The structured interaction between trend analysis, volume assessment, macroeconomic influences, and support/resistance classification enables the identification of high-confidence trading signals. By leveraging machine learning and real-time market insights, this system provides traders with a powerful tool to differentiate between real breakouts and fakeouts, improving profitability and risk management.
+
 ## Data Collection
    A robust dataset is critical for accurate price forecasting. Our approach involves gathering data from multiple sources:
 ![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
@@ -101,8 +102,6 @@ This is a sample image, to show how to add images to your page. To learn more op
 <!-- 3. [Semester 8 report](./) -->
 <!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
-
-Access to our research mid presentation - [Mid Presentations](https://www.canva.com/design/DAGfhXIfCuo/P01LSTdVM6jMf4dF3Pbf0w/edit)
 
 ## Links
 
