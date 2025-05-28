@@ -31,12 +31,14 @@ title:
 5. [Aim](#aim)
 6. [Proposed Solution](#proposed-solution)
 7. [Research Methodology](#research-methodology)
+   
 7.1 [Data Collection](#data-collection)
-9. [Experiment Setup and Implementation](#experiment-setup-and-implementation)
-10. [Results and Analysis](#results-and-analysis)
+8. [High Level Design Architecture](#high-level-design-architecture)
+9. [Links](#links)
+<!-- 10. [Results and Analysis](#results-and-analysis)
 11. [Conclusion](#conclusion)
 12. [Publications](#publications)
-13. [Links](#links)
+13. [Links](#links) -->
 
 ---
 
@@ -73,19 +75,9 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 • Gold Price Data (XAU/USD): We will collect historical XAU/USD OHLCV (Open, High, Low, Close, Volume) data across multiple timeframes (30-minute, hourly, 4-hourly, daily, weekly, and monthly) using the MetaTrader5 local terminal. This ensures we capture both short-term fluctuations and long-term trends. The data will cover the period from 2015 to 2025.
 
-• Macroeconomic Indicators: These fundamental factors drive long-term price movements and market sentiment. We will focus on:
+• Macroeconomic Indicators: These fundamental factors drive long-term price movements and market sentiment. We will focus on: Interest Rate (Federal Reserve Rate): Determines monetary policy direction, Consumer Price Index (CPI): Reflects inflationary pressures, Non-Farm Payrolls (NFP): Measures employment trends and economic health, Personal Consumption Expenditures (PCE): Tracks consumer spending behavior, Gross Domestic Product (GDP): Indicates overall economic growth, Producer Price Index (PPI): Represents inflation at the producer level.
 
-•	Interest Rate (Federal Reserve Rate): Determines monetary policy direction.
-
-•	Consumer Price Index (CPI): Reflects inflationary pressures.
-
-•	Non-Farm Payrolls (NFP): Measures employment trends and economic health.
-
-•	Personal Consumption Expenditures (PCE): Tracks consumer spending behavior.
-
-•	Gross Domestic Product (GDP): Indicates overall economic growth.
-
-•	Producer Price Index (PPI): Represents inflation at the producer level.
+![image](https://github.com/user-attachments/assets/78e5ca5d-ad3b-421d-be31-4a51218f8d43)
 
    Integration Strategy: Web scraping from Investing.com and manually extracting Federal Reserve statements. Data will be collected for the 2015-2025 range to cover multiple economic cycles.
 
@@ -94,14 +86,15 @@ This is a sample image, to show how to add images to your page. To learn more op
 ![image](https://github.com/user-attachments/assets/4e11ccc9-2616-4ab9-8003-94152994f61e)
 
 
-## Experiment Setup and Implementation
+## High Level Design Architecture
+![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
 
-## Results and Analysis
+<!-- ## Results and Analysis
 
 ## Conclusion
 
 ## Publications
-[//]: # "Note: Uncomment each once you uploaded the files to the repository"
+[//]: # "Note: Uncomment each once you uploaded the files to the repository" -->
 
 <!-- 1. [Semester 7 report](./) -->
 <!-- 2. [Semester 7 slides](./) -->
@@ -109,13 +102,14 @@ This is a sample image, to show how to add images to your page. To learn more op
 <!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
 
+Access to our research mid presentation - [Mid Presentations](https://www.canva.com/design/DAGfhXIfCuo/P01LSTdVM6jMf4dF3Pbf0w/edit)
 
 ## Links
 
 [//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
 
-- [Project Repository](https://github.com/cepdnaclk/repository-name)
-- [Project Page](https://cepdnaclk.github.io/repository-name)
+- [Project Repository](https://github.com/cepdnaclk/e19-4yp-Multi-Modal-Data-Fusion-for-Trading-Market-Price-Forecasting)
+- [Project Page](https://cepdnaclk.github.io/e19-4yp-Multi-Modal-Data-Fusion-for-Trading-Market-Price-Forecasting/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
