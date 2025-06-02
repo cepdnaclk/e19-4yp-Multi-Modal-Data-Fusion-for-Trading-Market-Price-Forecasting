@@ -10,17 +10,20 @@ if not mt5.initialize():
 
 # Define parameters
 symbol = "XAUUSD"
-timeframe = mt5.TIMEFRAME_M30  # 30-minute timeframe
+timeframe = mt5.TIMEFRAME_H1  # 1-hour timeframe
 end_time = datetime.now()  # Fetch data up to the current time
 chunk_size_days = 365  # Fetch data in 1-year chunks
 all_data = pd.DataFrame()
 
+# Define earliest date to fetch from
+earliest_date = datetime(2018, 1, 1)
+
 print(f"Fetching available data for {symbol}...")
 
-while True:
+while end_time > earliest_date:
     try:
-        # Calculate the chunk start time
-        start_time = end_time - timedelta(days=chunk_size_days)
+        # Calculate the chunk start time, but do not go before earliest_date
+        start_time = max(end_time - timedelta(days=chunk_size_days), earliest_date)
 
         # Fetch rates for this chunk
         rates = mt5.copy_rates_range(
@@ -57,6 +60,6 @@ if all_data.empty:
     exit()
 
 # Save data to CSV
-output_filename = f"{symbol}_30m_all_data_new.csv"
+output_filename = f"{symbol}{timeframe}.csv"
 all_data.to_csv(output_filename, index=False)
-print(f"Data saved to {output_filename}.")
+print(f"from ic broker Data saved to {output_filename}.")
