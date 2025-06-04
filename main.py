@@ -100,7 +100,11 @@ def build_multi_input_lstm(time_steps, n_tech, n_macro):
     return model
 
 
-def build_multi_input_5_layer_lstm(time_steps, n_tech, n_macro):
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Input, LSTM, Dense, Dropout, Concatenate
+from tensorflow.keras.optimizers import Adam
+
+def build_multi_input_5_layer_lstm(time_steps, n_tech, n_macro, learning_rate=0.001):
     # Technical branch
     tech_in = Input(shape=(time_steps, n_tech), name='tech_input')
     tech_lstm_1 = LSTM(128, return_sequences=True, name='tech_lstm_1')(tech_in)  # Layer 1
@@ -122,12 +126,17 @@ def build_multi_input_5_layer_lstm(time_steps, n_tech, n_macro):
     out = Dense(3, activation='softmax', name='output')(merged)  # Layer 5
 
     model = Model(inputs=[tech_in, macro_in], outputs=out)
+    
+    # Compile with manual learning rate
+    optimizer = Adam(learning_rate=learning_rate)
     model.compile(
-        optimizer='adam',
+        optimizer=optimizer,
         loss='sparse_categorical_crossentropy',
         metrics=['accuracy']
     )
+    
     return model
+
 
 def build_multi_input_stacked_lstm(time_steps, n_tech, n_macro):
     # Technical branch: stack two LSTM layers
@@ -209,6 +218,9 @@ def main():
 
     # 1) Technical indicators
     df = calculate_technical_indicators(df)
+    df.to_excel('./indicator_data.xlsx', index=True)
+    print("indicator data done")
+
 
     # 2) Macro surprises & lag windows (no fill/shift required)
     macro_cols = [
@@ -226,8 +238,13 @@ def main():
 
     # Features
     tech_features   = ['open','high','low','close','tick_volume',
-                        'MA_10','MACD','Momentum_4','ROC_2','RSI_14',
-                        'BB_upper','BB_lower','CCI_20']
+                        'MA_50','MA_200','MACD','RSI_14',
+                        'BB_upper','BB_lower']
+    # tech_features   = ['open','high','low','close','tick_volume',
+    #                     'MA_10','MACD','Momentum_4','ROC_2','RSI_14',
+    #                     'BB_upper','BB_lower','CCI_20']
+
+
 
     # All raw macro cols + computed surprise and their lags
     macro_features  = macro_cols + [c for c in df.columns if 'Surprise' in c]
@@ -248,8 +265,10 @@ def main():
 
     # Build & train
     model = build_multi_input_5_layer_lstm(time_steps,
-                                   len(tech_features),
-                                   len(macro_features))
+                                        len(tech_features),
+                                        len(macro_features),
+                                        learning_rate=0.0005)  # Set your desired LR here
+
     model.summary()
 
     es = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
@@ -270,17 +289,33 @@ def main():
                                  'macro_input': X_te_macro_s})
     y_pred = np.argmax(y_pred_prob, axis=1)
 
+    # DEBUG: Print predicted and true class distribution
+    print("Predicted class distribution:")
+    unique, counts = np.unique(y_pred, return_counts=True)
+    for cls, cnt in zip(unique, counts):
+        print(f"Class {cls}: {cnt} samples")
+
+    print("True class distribution:")
+    unique_true, counts_true = np.unique(y_test, return_counts=True)
+    for cls, cnt in zip(unique_true, counts_true):
+        print(f"Class {cls}: {cnt} samples")
+
     print_classification_report(y_test, y_pred)
     prof_acc = profit_accuracy(y_test, y_pred)
     print(f"Profit Accuracy: {prof_acc:.4f}")
     plot_history(history)
 
-    # Align test DataFrame with test labels/predictions
-    df_test = df.iloc[time_steps + split_idx : time_steps + split_idx + len(y_test)]
+    # Align df_test properly with y_test and y_pred (important for correct plotting)
+    df_test = df.iloc[time_steps + split_idx : time_steps + split_idx + len(y_test)].copy()
+    df_test.reset_index(inplace=True)  # reset index so plotting uses integer index or time column
 
-    # Plot trading-style prediction visualization
-    plot_trading_predictions_interactive(df_test, y_test, y_pred, price_col='close')
+    # DEBUG: check shapes alignment
+    print(f"df_test shape: {df_test.shape}")
+    print(f"y_test shape: {y_test.shape}")
+    print(f"y_pred shape: {y_pred.shape}")
 
+    # Plot interactive trading predictions
+    plot_trading_predictions_interactive(df_test, y_test, y_pred, price_col='close', time_col='time')
 
 if __name__ == "__main__":
     main()

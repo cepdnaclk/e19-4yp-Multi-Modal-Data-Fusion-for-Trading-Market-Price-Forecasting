@@ -11,13 +11,14 @@ def load_forex_data(path):
     return df
 
 def calculate_technical_indicators(df):
-    df['MA_10'] = moving_average(df['close'], 10)
+    df['MA_50'] = moving_average(df['close'], 50)
+    df['MA_200'] = moving_average(df['close'], 200)
     df['MACD'] = macd(df['close'])
-    df['Momentum_4'] = momentum(df['close'], 4)
-    df['ROC_2'] = rate_of_change(df['close'], 2)
+    # df['Momentum_4'] = momentum(df['close'], 4)
+    # df['ROC_2'] = rate_of_change(df['close'], 2)
     df['RSI_14'] = relative_strength_index(df['close'], 14)
     df['BB_upper'], df['BB_lower'] = bollinger_bands(df['close'])
-    df['CCI_20'] = commodity_channel_index(df)
+    # df['CCI_20'] = commodity_channel_index(df)
     df.dropna(inplace=True)
     return df
 
