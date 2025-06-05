@@ -6,7 +6,6 @@ import datetime
   1. Missing data handling - Interpolation - Forward filling
   2. Normalization and scaling
    3. Outlier detection
-   4. Time series data preprocessing - Date & Time Conversion - Resampling
   5. Feature Engineering
   6. Correlation & Feature Selection
   '''
@@ -14,6 +13,7 @@ import datetime
 # Load forex data
 forex = pd.read_csv('./Data/XAUUSD_1M_markettrend.csv', parse_dates=['time'])
 
+'''4. Time series data preprocessing - Date & Time Conversion'''
 # Updated function to parse Release Date and Time
 def parse_macro_datetime(row):
     release_date = row['Release Date']
@@ -45,6 +45,7 @@ def merge_macro_to_forex(forex_df, macro_df, factor_name, forex_timeframe='1H'):
     forex_df = forex_df.sort_values('time')
     macro_df = macro_df.sort_values('datetime')
 
+  '''- Resampling - to a common frequency'''
     # Handle special timeframe flooring inside the function
     def floor_times(series, timeframe):
         if timeframe == '1W':
