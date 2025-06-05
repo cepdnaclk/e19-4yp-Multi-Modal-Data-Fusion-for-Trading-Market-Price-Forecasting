@@ -33,7 +33,8 @@ title:
 7. [Research Methodology](#research-methodology)
 8. [Data Collection](#data-collection)
 9. [High Level Design Architecture](#high-level-design-architecture)
-10. [Links](#links)
+10. [Data Preprocessing & Feature Engineering](#data-preprocessing-&-feature-engineering)
+11. [Links](#links)
 
 ---
 
@@ -85,6 +86,18 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ## High Level Design Architecture
 ![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
+
+## Data Preprocessing & Feature Engineering
+   1. Missing data handling
+              - Interpolation
+              - Forward filling
+   2. Normalization and scaling
+   3. Outlier detection
+   4. Time series data preprocessing
+              - Date & Time Conversion
+              - Resampling
+  5. Feature Engineering
+  6. Correlation & Feature Selection
 
 <!-- ## Results and Analysis
 
