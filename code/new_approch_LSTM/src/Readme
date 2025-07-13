@@ -1,0 +1,18 @@
+python -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+
+# from project root (fx_lstm_forecast/)
+# 1) Quick sanity checks
+python src/data_prep.py       # loads data and prints head
+python src/indicators.py      # computes indicators and prints tail
+python src/dataset.py         # builds sequences and prints shapes
+
+# 2) Train the LSTM+Attention model
+python src/train.py           # trains, early‑stops, and saves model to models/
+
+# 3) Backtest & compute returns
+python src/evaluate.py        # loads saved model, runs backtest, and prints cumulated return
+
+# 4) Generate TradingView‑style dashboard
+python src/visualize.py 
