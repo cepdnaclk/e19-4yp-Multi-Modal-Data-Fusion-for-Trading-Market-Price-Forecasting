@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TradingView-Style Dashboard</title>
+    <script src="https://unpkg.com/lightweight-charts@latest/dist/lightweight-charts.standalone.production.js"></script>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        #chart { width: 100%; height: 600px; }
+        #controls { padding: 10px; }
+        button { margin: 5px; padding: 8px 16px; }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <button onclick="toggleIndicator('SMA_50')">Toggle SMA 50</button>
+        <button onclick="toggleIndicator('SMA_200')">Toggle SMA 200</button>
+        <button onclick="toggleIndicator('RSI')">Toggle RSI</button>
+        <button onclick="toggleIndicator('MACD')">Toggle MACD</button>
+        <button onclick="toggleMacroEvents()">Toggle Macro Events</button>
+    </div>
+    <div id="chart"></div>
+    <script>
+        // Check if LightweightCharts is available
+        if (typeof LightweightCharts === 'undefined') {
+            console.error('LightweightCharts library not loaded. Check the script URL.');
+            alert('Chart library failed to load. Please refresh or check console.');
+            throw new Error('LightweightCharts not defined');
+        }
+
+        // Initialize chart with debugging
+        const chart = LightweightCharts.createChart(document.getElementById('chart'), {
+            width: window.innerWidth,
+            height: 600,
+            timeScale: { timeVisible: true, secondsVisible: true },
+            rightPriceScale: { visible: true },
+            layout: { background: { type: 'solid', color: '#ffffff' }, textColor: '#333' }
+        });
+        console.log('Chart created:', chart);
+
+        // Add candlestick series with simplified options
+        let candleSeries;
+        try {
+            candleSeries = chart.addCandlestickSeries(); // Remove priceFormat for testing
+            console.log('Candlestick series created:', candleSeries);
+        } catch (e) {
+            console.error('Failed to add candlestick series:', e);
+            alert('Failed to initialize chart. Check console for details.');
+        }
+
+        // Add indicator series
+        const sma50Series = chart.addLineSeries({ color: 'blue', lineWidth: 2, title: 'SMA 50', visible: false });
+        const sma200Series = chart.addLineSeries({ color: 'red', lineWidth: 2, title: 'SMA 200', visible: false });
+        const rsiSeries = chart.addLineSeries({ color: 'purple', lineWidth: 2, title: 'RSI', priceScaleId: 'rsi', visible: false });
+        const macdSeries = chart.addLineSeries({ color: 'green', lineWidth: 2, title: 'MACD', priceScaleId: 'macd', visible: false });
+        const signalSeries = chart.addLineSeries({ color: 'orange', lineWidth: 2, title: 'Signal', priceScaleId: 'macd', visible: false });
+
+        // Add separate price scales for RSI and MACD
+        chart.priceScale('rsi').applyOptions({ scaleMargins: { top: 0.8, bottom: 0.1 } });
+        chart.priceScale('macd').applyOptions({ scaleMargins: { top: 0.6, bottom: 0.3 } });
+
+        // Store macro event markers
+        let macroMarkers = [];
+
+        // Fetch candlestick data
+        fetch('/api/candlestick')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                if (!candleSeries) throw new Error('Candlestick series not initialized');
+                candleSeries.setData(data);
+                chart.timeScale().fitContent();
+                console.log('Candlestick data loaded:', data.length);
+            })
+            .catch(error => console.error('Error fetching candlestick data:', error));
+
+        // Fetch indicator data
+        let indicators = {};
+        fetch('/api/indicators')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                indicators = data;
+                sma50Series.setData(data.SMA_50);
+                sma200Series.setData(data.SMA_200);
+                rsiSeries.setData(data.RSI);
+                macdSeries.setData(data.MACD);
+                signalSeries.setData(data.Signal);
+                macroMarkers = data.Macro_factor.map(event => ({
+                    time: event.time,
+                    position: 'aboveBar',
+                    color: '#2196F3',
+                    shape: 'circle',
+                    text: `Macro: ${event.Macro_factor}`
+                }));
+                if (candleSeries) candleSeries.setMarkers(macroMarkers);
+                console.log('Indicator data loaded:', Object.keys(data).map(k => `${k}: ${data[k].length}`).join(', '));
+            })
+            .catch(error => console.error('Error fetching indicator data:', error));
+
+        // Toggle indicator visibility
+        function toggleIndicator(indicator) {
+            const seriesMap = {
+                'SMA_50': sma50Series,
+                'SMA_200': sma200Series,
+                'RSI': rsiSeries,
+                'MACD': macdSeries
+            };
+            const series = seriesMap[indicator];
+            series.applyOptions({ visible: !series.options().visible });
+            if (indicator === 'MACD' && series.options().visible) {
+                signalSeries.applyOptions({ visible: true });
+            } else if (indicator === 'MACD') {
+                signalSeries.applyOptions({ visible: false });
+            }
+        }
+
+        // Toggle macro event markers
+        function toggleMacroEvents() {
+            if (candleSeries && candleSeries.options().markers.length > 0) {
+                candleSeries.setMarkers([]);
+            } else if (candleSeries) {
+                candleSeries.setMarkers(macroMarkers);
+            }
+        }
+
+        // Resize chart on window resize
+        window.addEventListener('resize', () => {
+            chart.resize(window.innerWidth, 600);
+        });
+    </script>
+</body>
+</html>
