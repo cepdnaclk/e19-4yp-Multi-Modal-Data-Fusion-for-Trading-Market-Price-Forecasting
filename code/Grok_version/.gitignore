@@ -1,0 +1,6 @@
+/venv
+# Ignore all NumPy arrays
+*.npy
+
+# Ignore pickle files
+*.pkl
