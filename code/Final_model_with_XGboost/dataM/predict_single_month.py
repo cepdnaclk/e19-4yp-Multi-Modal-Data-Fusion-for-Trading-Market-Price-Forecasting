@@ -71,6 +71,16 @@ abs_error = abs(actual_price - predicted_price)
 accuracy = 100 - (abs_error / actual_price * 100)
 
 # ----------------------------
+actual_price = test_df['price'].values[0]
+actual_change = actual_price - price_lag_1
+abs_error = abs(actual_price - predicted_price)
+accuracy = 100 - (abs_error / actual_price * 100)
+
+# Directional Accuracy
+direction_correct = np.sign(predicted_change) == np.sign(actual_change)
+directional_accuracy = 100.0 if direction_correct else 0.0
+
+# ----------------------------
 # Output
 # ----------------------------
 print(f"📅 Forecast Date       : {test_df['date'].iloc[0].strftime('%Y-%m-%d')}")
@@ -80,17 +90,8 @@ print(f"Predicted Change      : {predicted_change:.2f}")
 print(f"📌 Actual Price        : {actual_price:.2f}")
 print(f"📌 Actual Price Change : {actual_change:.2f}")
 print(f"🎯 Accuracy            : {accuracy:.2f}%")
-
-# ----------------------------
-actual_price = test_df['price'].values[0]
-actual_change = actual_price - price_lag_1
-abs_error = abs(actual_price - predicted_price)
-accuracy = 100 - (abs_error / actual_price * 100)
-
-# Directional Accuracy
-direction_correct = np.sign(predicted_change) == np.sign(actual_change)
-directional_accuracy = 100.0 if direction_correct else 0.0
 print(f"📊 Directional Accuracy: {directional_accuracy:.2f}%")
+
 
 # ----------------------------
 # Save forecast to log file
