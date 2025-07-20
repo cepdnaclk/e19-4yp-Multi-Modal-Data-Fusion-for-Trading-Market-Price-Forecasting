@@ -6,7 +6,7 @@ import re
 
 # --- FILEPATHS ---
 with_micro_path = "forecast_log.txt"
-without_micro_path = "forecast_log_withouM.txt"
+with_indicators_path = "forecast_log_withouM.txt"
 
 # --- PARSE FORECAST LOG FILE ---
 def parse_forecast_log(filepath):
@@ -32,17 +32,17 @@ def parse_forecast_log(filepath):
 
 # --- LOAD AND MERGE ---
 df_with = parse_forecast_log(with_micro_path)
-df_without = parse_forecast_log(without_micro_path)
+df_without = parse_forecast_log(with_indicators_path)
 
 df_merged = df_with[['date', 'actual_price']].copy()
 df_merged['predicted_with_micro'] = df_with['predicted_price']
-df_merged['predicted_without_micro'] = df_without['predicted_price']
+df_merged['predicted_with_indicators'] = df_without['predicted_price']
 
 # --- PLOT ---
 plt.figure(figsize=(12, 6))
 plt.plot(df_merged['date'], df_merged['actual_price'], label='Actual Price', marker='o', color='blue')
 plt.plot(df_merged['date'], df_merged['predicted_with_micro'], label='Predicted (With Macro)', marker='x', color='green')
-plt.plot(df_merged['date'], df_merged['predicted_without_micro'], label='Predicted (Without Macro)', marker='s', color='orange')
+plt.plot(df_merged['date'], df_merged['predicted_with_indicators'], label='Predicted (With Indicators)', marker='s', color='orange')
 
 plt.title("Gold Price Forecast Comparison")
 plt.xlabel("Date")

@@ -34,7 +34,7 @@ df_merged = df_merged.merge(
 plt.figure(figsize=(12, 6))
 plt.plot(df_merged['date'], df_merged['actual_price'], label='Actual Price', marker='o', color='blue')
 plt.plot(df_merged['date'], df_merged['predicted_with_macro'], label='Predicted (With Macro)', marker='x', color='green')
-plt.plot(df_merged['date'], df_merged['predicted_without_macro'], label='Predicted (Without Macro)', marker='s', color='orange')
+plt.plot(df_merged['date'], df_merged['predicted_without_macro'], label='Predicted (Without Macro or Indicators)', marker='s', color='orange')
 
 plt.title("Gold Price Forecast Comparison")
 plt.xlabel("Date")
