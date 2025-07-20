@@ -63,10 +63,18 @@ r2 = r2_score(y_test, predicted_price)
 mape = mean_absolute_percentage_error(y_test, predicted_price) * 100
 accuracy = 100 - mape
 
+# Directional Accuracy
+correct_direction = np.sum(
+    (np.diff(y_test.values) > 0) == (np.diff(predicted_price) > 0)
+)
+directional_accuracy = correct_direction / (len(y_test) - 1)
+
+# Print metrics
 print(f"MAE: {mae:.2f}")
 print(f"RMSE: {rmse:.2f}")
 print(f"R² Score: {r2:.4f}")
 print(f"MAPE: {mape:.2f}% → Accuracy: {accuracy:.2f}%")
+print(f"Directional Accuracy: {directional_accuracy:.2%}")
 
 # ----------------------------
 # Save predictions and plot

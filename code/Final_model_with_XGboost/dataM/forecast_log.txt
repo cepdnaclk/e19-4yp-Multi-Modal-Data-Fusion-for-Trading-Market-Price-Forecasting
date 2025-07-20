@@ -1,0 +1,138 @@
+
+📅 Forecast Date       : 2025-07-01
+Last Known Price      : 3302.96
+Predicted Price       : 3343.23
+Predicted Change      : 40.27
+📌 Actual Price        : 3349.91
+📌 Actual Price Change : 46.95
+🎯 Accuracy            : 99.80%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-06-01
+Last Known Price      : 3289.34
+Predicted Price       : 3461.09
+Predicted Change      : 171.75
+📌 Actual Price        : 3302.96
+📌 Actual Price Change : 13.62
+🎯 Accuracy            : 95.21%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-05-01
+Last Known Price      : 3288.37
+Predicted Price       : 3446.77
+Predicted Change      : 158.40
+📌 Actual Price        : 3289.34
+📌 Actual Price Change : 0.97
+🎯 Accuracy            : 95.21%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-04-01
+Last Known Price      : 3124.06
+Predicted Price       : 3382.02
+Predicted Change      : 257.96
+📌 Actual Price        : 3288.37
+📌 Actual Price Change : 164.31
+🎯 Accuracy            : 97.15%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-03-01
+Last Known Price      : 2857.15
+Predicted Price       : 2903.94
+Predicted Change      : 46.79
+📌 Actual Price        : 3124.06
+📌 Actual Price Change : 266.91
+🎯 Accuracy            : 92.95%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-02-01
+Last Known Price      : 2798.68
+Predicted Price       : 2947.63
+Predicted Change      : 148.95
+📌 Actual Price        : 2857.15
+📌 Actual Price Change : 58.47
+🎯 Accuracy            : 96.83%
+--------------------------------------------------
+
+📅 Forecast Date       : 2025-01-01
+Last Known Price      : 2624.43
+Predicted Price       : 2619.62
+Predicted Change      : -4.81
+📌 Actual Price        : 2798.68
+📌 Actual Price Change : 174.25
+🎯 Accuracy            : 93.60%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-12-01
+Last Known Price      : 2650.40
+Predicted Price       : 2758.46
+Predicted Change      : 108.06
+📌 Actual Price        : 2624.43
+📌 Actual Price Change : -25.97
+🎯 Accuracy            : 94.89%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-11-01
+Last Known Price      : 2743.89
+Predicted Price       : 2759.66
+Predicted Change      : 15.77
+📌 Actual Price        : 2650.40
+📌 Actual Price Change : -93.49
+🎯 Accuracy            : 95.88%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-10-01
+Last Known Price      : 2634.66
+Predicted Price       : 2661.83
+Predicted Change      : 27.17
+📌 Actual Price        : 2743.89
+📌 Actual Price Change : 109.23
+🎯 Accuracy            : 97.01%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-09-01
+Last Known Price      : 2502.98
+Predicted Price       : 2520.82
+Predicted Change      : 17.84
+📌 Actual Price        : 2634.66
+📌 Actual Price Change : 131.68
+🎯 Accuracy            : 95.68%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-08-01
+Last Known Price      : 2447.24
+Predicted Price       : 2473.15
+Predicted Change      : 25.91
+📌 Actual Price        : 2502.98
+📌 Actual Price Change : 55.74
+🎯 Accuracy            : 98.81%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-07-01
+Last Known Price      : 2326.34
+Predicted Price       : 2429.20
+Predicted Change      : 102.86
+📌 Actual Price        : 2447.24
+📌 Actual Price Change : 120.90
+🎯 Accuracy            : 99.26%
+--------------------------------------------------
+
+📅 Forecast Date       : 2024-06-01
+Last Known Price      : 2327.34
+Predicted Price       : 2332.31
+Predicted Change      : 4.97
+📌 Actual Price        : 2326.34
+📌 Actual Price Change : -1.00
+🎯 Accuracy            : 99.74%
+📊 Directional Accuracy: 0.00%
+--------------------------------------------------
+
+
+📅 Forecast Date       : 2025-07-01
+Last Known Price      : 3302.96
+Predicted Price       : 3343.23
+Predicted Change      : 40.27
+📌 Actual Price        : 3349.91
+📌 Actual Price Change : 46.95
+🎯 Accuracy            : 99.80%
+📊 Directional Accuracy: 100.00%
+--------------------------------------------------
