@@ -9,7 +9,7 @@ def get_data(timeframe):
     try:
         # Select CSV based on timeframe
         filename = {
-            '30min': 'xauusd_m30_full_predictions.csv',
+            '30min': 'forecast_output_30min.csv',
             '1hour': 'xauusd_1H_full_predictions.csv'
         }.get(timeframe, 'xauusd_m30_full_predictions.csv')  # Default to 30min
         df = pd.read_csv(filename)
