@@ -24,7 +24,7 @@ title:
 
 #### Table of content
 
-1. [Abstract](#abstract)
+1. [Introduction](#introduction)
 2. [Background and Motivation](#background-and-motivation)
 3. [Problem Statement](#problem-statement)
 4. [Research Gap](#research-gap)
@@ -56,11 +56,21 @@ This is a sample image, to show how to add images to your page. To learn more op
 
 ---
 
+## Background and Motivation
+   Highlights the importance of stock market forecasting for reducing risk and improving trading strategies in a $110 trillion global market influenced by factors like interest rates, inflation, and employment data. Traditional technical analysis methods often fall short, leading to high retail trader losses. Advances in machine learning enable analysis of large datasets and complex patterns, especially when integrating macroeconomic indicators that can predict market shifts. The study aims to develop a comprehensive prediction framework that combines historical data, market patterns, and macroeconomic factors to enhance accuracy and provide traders with actionable, data-driven insights for better decision-making.
+
 ## Problem Statement
 
 Accurately predicting tradable moments and entry/exit points in Gold (XAU/USD) is extremely difficult due to its high volatility and sudden market shocks based on economic conditions.
 
----
+## Research Gap
+   Current trading price forecasting models face several key limitations: they mostly rely on price data and technical indicators, often ignoring important macroeconomic factors; they lack effective mechanisms to control traders’ emotional biases like FOMO or panic selling; and they suffer from poor interpretability, making it hard for traders to trust AI predictions. Additionally, many models fail to adapt to different market regimes (bull, bear, sideways), reducing their accuracy during volatile or shifting conditions. Addressing these gaps requires multi-modal, emotionally aware, interpretable, and adaptive machine learning models for more reliable trading forecasts.
+
+## Aim
+   The aim of this research is to forecast trading moments, entry prices, and exit prices for gold (XAU/USD) by analyzing the relationship between historical price movement patterns, market trading volume, and key macroeconomic indicators such as CPI, GDP, PPI, PCE, NFP, and interest rates. The research seeks to develop a multi-modal machine learning framework that enhances the predictive accuracy of trading decisions by integrating these factors.
+
+## Proposed Solution
+   Introduces a multi-modal machine learning framework to improve financial forecasting by integrating historical price data, trading volume, and macroeconomic factors. Using deep learning, the model analyzes price trends and volume to gauge trend strength, while incorporating economic indicators like inflation and interest rates to capture external influences. It also predicts optimal stop-loss levels to enhance risk management during market volatility. This comprehensive approach aims to deliver more accurate, transparent, and data-driven trade entry and exit predictions, addressing existing model limitations and supporting better decision-making in complex markets.
 
 ## Research Objectives
 
@@ -86,12 +96,6 @@ Macroeconomic indicators significantly influence markets, providing insights int
 - Gross Domestic Product (GDP)
 - Producer Price Index (PPI)
 
----
-
-## Abstract
-
-This research proposes a machine learning approach to distinguish genuine breakouts from false signals (fakeouts) in financial markets, with a focus on gold (XAU/USD) trading. 
-
 Key highlights:
 - **Data Fusion**: Combining historical price data, trading volume, and macroeconomic factors.
 - **Modeling**: Utilizing deep learning models like LSTM or Transformer.
@@ -100,27 +104,27 @@ Key highlights:
 We aim to help traders identify high-probability opportunities and reduce risks amid market volatility.
 
 
-## Background and Motivation
-   Highlights the importance of stock market forecasting for reducing risk and improving trading strategies in a $110 trillion global market influenced by factors like interest rates, inflation, and employment data. Traditional technical analysis methods often fall short, leading to high retail trader losses. Advances in machine learning enable analysis of large datasets and complex patterns, especially when integrating macroeconomic indicators that can predict market shifts. The study aims to develop a comprehensive prediction framework that combines historical data, market patterns, and macroeconomic factors to enhance accuracy and provide traders with actionable, data-driven insights for better decision-making.
-
-## Problem Statement
-   Accurate prediction of tradable moments, entry prices, and exit points remains a significant challenge in financial markets, particularly in volatile assets like gold (XAU/USD). Traditional forecasting models, which mainly rely on historical price data and technical indicators, fail to capture the complex interplay between market behavior and external macroeconomic factors, such as inflation, employment rates, and interest rate fluctuations. These models over-rely on historical data while neglecting the critical influence of macroeconomic indicators, leading to inaccurate predictions and missed opportunities. Additionally, they fail to account for the interdependencies between market trends and external economic conditions, resulting in fragmented insights. Existing approaches often analyze time series data in isolation, and the lack of an integrated, multi-modal framework that combines historical price patterns with macroeconomic contexts further limits the precision and adaptability of predictive tools.
-
-## Research Gap
-   Current trading price forecasting models face several key limitations: they mostly rely on price data and technical indicators, often ignoring important macroeconomic factors; they lack effective mechanisms to control traders’ emotional biases like FOMO or panic selling; and they suffer from poor interpretability, making it hard for traders to trust AI predictions. Additionally, many models fail to adapt to different market regimes (bull, bear, sideways), reducing their accuracy during volatile or shifting conditions. Addressing these gaps requires multi-modal, emotionally aware, interpretable, and adaptive machine learning models for more reliable trading forecasts.
-
-## Aim
-   The aim of this research is to forecast trading moments, entry prices, and exit prices for gold (XAU/USD) by analyzing the relationship between historical price movement patterns, market trading volume, and key macroeconomic indicators such as CPI, GDP, PPI, PCE, NFP, and interest rates. The research seeks to develop a multi-modal machine learning framework that enhances the predictive accuracy of trading decisions by integrating these factors.
-
-## Proposed Solution
-   Introduces a multi-modal machine learning framework to improve financial forecasting by integrating historical price data, trading volume, and macroeconomic factors. Using deep learning, the model analyzes price trends and volume to gauge trend strength, while incorporating economic indicators like inflation and interest rates to capture external influences. It also predicts optimal stop-loss levels to enhance risk management during market volatility. This comprehensive approach aims to deliver more accurate, transparent, and data-driven trade entry and exit predictions, addressing existing model limitations and supporting better decision-making in complex markets.
-
-
 ## Research Methodology
    This multi-stage framework for breakout prediction is a comprehensive system that integrates multiple data-driven approaches to enhance trading accuracy. Each module plays a crucial role in processing and analyzing different aspects of financial data, ensuring a well-rounded predictive model. The structured interaction between trend analysis, volume assessment, macroeconomic influences, and support/resistance classification enables the identification of high-confidence trading signals. By leveraging machine learning and real-time market insights, this system provides traders with a powerful tool to differentiate between real breakouts and fakeouts, improving profitability and risk management.
 
 ## Data Collection
-   A robust dataset is critical for accurate price forecasting. Our approach involves gathering data from multiple sources:
+
+Data is collected from multiple sources:
+- *Macroeconomic Indicators* from Federal Reserve Statements, Investing.com (2018-2025)
+- *XAU/USD Price & Trading Volume* through MetaTrader 5 API, IC Market Broker
+
+## Data Preprocessing & Feature Engineering
+   1. Missing data handling
+              - Interpolation
+              - Forward filling
+   2. Normalization and scaling
+   3. Outlier detection
+   4. Time series data preprocessing
+              - Date & Time Conversion
+              - Resampling
+  5. Feature Engineering
+  6. Correlation & Feature Selection
+
 ![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
 
 • Gold Price Data (XAU/USD): We will collect historical XAU/USD OHLCV (Open, High, Low, Close, Volume) data across multiple timeframes (30-minute, hourly, 4-hourly, daily, weekly, and monthly) using the MetaTrader5 local terminal. This ensures we capture both short-term fluctuations and long-term trends. The data will cover the period from 2015 to 2025.
@@ -137,26 +141,73 @@ We aim to help traders identify high-probability opportunities and reduce risks 
 
 
 ## High Level Design Architecture
-![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
+![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e)
 
-## Data Preprocessing & Feature Engineering
-   1. Missing data handling
-              - Interpolation
-              - Forward filling
-   2. Normalization and scaling
-   3. Outlier detection
-   4. Time series data preprocessing
-              - Date & Time Conversion
-              - Resampling
-  5. Feature Engineering
-  6. Correlation & Feature Selection
+### Models Used
+- *ARIMA/SARIMA:* Statistical model for forecasting based on time series analysis.
+- *LSTM (Long Short-Term Memory):* Deep learning approach for capturing long-term dependencies in sequential data.
+- *XGBoost:* Tree-based ensemble model, capturing complex patterns from structured data.
+![image](https://github.com/user-attachments/assets/3fdd6b02-968c-4048-9c20-d61e53ad37cf)
 
-<!-- ## Results and Analysis
+---
 
-## Conclusion
+## Key Findings
 
-## Publications
-[//]: # "Note: Uncomment each once you uploaded the files to the repository" -->
+1. *CPI, PPI, and PCE* are highly correlated with market trends.
+2. *Macroeconomic Factors:* CPI, PCE, and GDP show a negative correlation with the market trend.
+3. *Market Volume:* Significant variations observed in global market sessions (Sydney, Tokyo, London, New York).
+
+---
+
+## Model Performance
+
+### ARIMA vs SARIMA Model Comparison
+![image](https://github.com/user-attachments/assets/6a14ce4b-f213-4d2d-9736-889dcc43c91c)
+
+### LSTM Model
+![image](https://github.com/user-attachments/assets/e954e71e-a552-41f5-954b-e2fa68527a8d)
+
+### XGBoost Model
+![image](https://github.com/user-attachments/assets/d14fe5e4-e7f0-4e4b-af86-af1d5572ca00)
+
+---
+
+## Insights & Impact
+
+1. *Regime-Aware Forecasting*: Build models to identify different market conditions.
+2. *Session-Dependent Liquidity Patterns*: Tune execution algorithms based on market sessions.
+3. *Automated Execution*: Leverage real-time data for risk-controlled, smart trading execution.
+
+---
+
+## Future Research Directions
+
+1. Regime‑Aware Forecasting
+        Build models that can highly identify different market conditions 
+
+2. Multi‑Step, Feature‑First Pipelines
+        Generalize the two‑stage approach
+
+3. Combine News Sentiments
+        Integrate streaming news, social‑media sentiment, and order‑book signals
+
+4. One‑Step LSTM Strengths & Limits
+        Deploy separate LSTMs per forecast horizon (micro‑structure vs. longer term).
+
+5. Risk Controls - Trading systems with stop‑loss rules
+
+---
+
+## Limitations
+
+1. Limited data availability for real-time forecasting.
+2. The complexity of models increases the risk of overfitting.
+<!-- ## Results and Analysis-->
+
+<!--## Conclusion-->
+
+<!--## Publications-->
+<!--[//]: # "Note: Uncomment each once you uploaded the files to the repository" -->
 
 <!-- 1. [Semester 7 report](./) -->
 <!-- 2. [Semester 7 slides](./) -->
