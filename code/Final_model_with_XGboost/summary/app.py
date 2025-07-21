@@ -29,8 +29,8 @@ def get_data():
                       on='time', how='outer')
         
         # Fill missing values
-        df['actual_price'] = df['actual_price'].fillna(method='ffill')  # Use df2's actual_price
-        df['predicted_price_with_macro'] = df['predicted_price_with_macro'].fillna(method='ffill')
+        df['actual_price'] = df['actual_price']  # Use df2's actual_price
+        df['predicted_price_with_macro'] = df['predicted_price_with_macro']
         df['predicted_price'] = df['predicted_price'].fillna(method='ffill')  # Without macro
 
         if df.empty:
@@ -52,7 +52,7 @@ def create_dashboard(doc):
         ))
     except Exception as e:
         print(f"Failed to load data: {e}")
-        doc.add_root(column(figure(title="Error", height=500, width=1000)))
+        doc.add_root(column(figure(title="Error", height=600, width=1400)))
         return
 
     # Create figure with three lines
