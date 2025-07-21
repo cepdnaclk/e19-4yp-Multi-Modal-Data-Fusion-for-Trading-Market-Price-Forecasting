@@ -48,8 +48,8 @@ def update_dashboard(attr, old, new):
 
 def create_dashboard(doc):
     global source
-    # Initial data (30min by default)
-    df = get_data('30min')
+    # Initial data (1Month (with macro))
+    df = get_data('1Month (with macro)')
     source = ColumnDataSource(data=dict(
         time=df['time'],
         actual_price=df['actual_price'],
@@ -101,7 +101,7 @@ def create_dashboard(doc):
     # Dropdown for timeframe selection
     dropdown = Select(
         title="Time Frame",
-        value="30min",
+        value="1Month (with macro)",
         options=["30min", "1hour", "1Month (with macro)", "1Month (clean)", "1Month (with indicators)", "1Month (hybrid)"]
     )
     dropdown.on_change("value", update_dashboard)
