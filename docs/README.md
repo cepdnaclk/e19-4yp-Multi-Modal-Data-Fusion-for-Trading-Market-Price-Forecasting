@@ -162,16 +162,13 @@ Data is collected from multiple sources:
 ## Model Performance
 
 ### ARIMA vs SARIMA Model Comparison
-| Model   | RMSE  | MAE  | MAPE (%) |
-|---------|-------|------|----------|
-| ARIMA   | 11.24 | 12.03| 1.12     |
-| SARIMA  | 10.42 | 8.65 | 0.71     |
+![image](https://github.com/user-attachments/assets/6a14ce4b-f213-4d2d-9736-889dcc43c91c)
 
-### LSTM Model Results:
-- *RMSE for various timeframes* ranging from 8.37 (30 min) to 287.21 (1 week).
-- *Overall Accuracy with Macro:* 95.84%
-- *Overall Directional Accuracy with Macro:* 72.73%
-- *Hybrid (Indicators + Macro):* 96.80% Accuracy, 93.82% Directional Accuracy.
+### LSTM Model
+![image](https://github.com/user-attachments/assets/e954e71e-a552-41f5-954b-e2fa68527a8d)
+
+### XGBoost Model
+![image](https://github.com/user-attachments/assets/d14fe5e4-e7f0-4e4b-af86-af1d5572ca00)
 
 ---
 
@@ -185,9 +182,19 @@ Data is collected from multiple sources:
 
 ## Future Research Directions
 
-- Manual extraction of macroeconomic factors.
-- High computational power requirement.
-- Overfitting risk in complex models.
+1. Regime‑Aware Forecasting
+        Build models that can highly identify different market conditions 
+
+2. Multi‑Step, Feature‑First Pipelines
+        Generalize the two‑stage approach
+
+3. Combine News Sentiments
+        Integrate streaming news, social‑media sentiment, and order‑book signals
+
+4. One‑Step LSTM Strengths & Limits
+        Deploy separate LSTMs per forecast horizon (micro‑structure vs. longer term).
+
+5. Risk Controls - Trading systems with stop‑loss rules
 
 ---
 
