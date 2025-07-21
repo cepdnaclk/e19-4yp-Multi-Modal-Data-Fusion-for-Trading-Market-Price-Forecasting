@@ -117,6 +117,37 @@ Data is collected from multiple sources:
 - Handling missing data, normalization, scaling, and outlier detection
 - Feature engineering to create new data features and perform correlation/feature selection
 
+![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
+
+• Gold Price Data (XAU/USD): We will collect historical XAU/USD OHLCV (Open, High, Low, Close, Volume) data across multiple timeframes (30-minute, hourly, 4-hourly, daily, weekly, and monthly) using the MetaTrader5 local terminal. This ensures we capture both short-term fluctuations and long-term trends. The data will cover the period from 2015 to 2025.
+
+• Macroeconomic Indicators: These fundamental factors drive long-term price movements and market sentiment. We will focus on: Interest Rate (Federal Reserve Rate): Determines monetary policy direction, Consumer Price Index (CPI): Reflects inflationary pressures, Non-Farm Payrolls (NFP): Measures employment trends and economic health, Personal Consumption Expenditures (PCE): Tracks consumer spending behavior, Gross Domestic Product (GDP): Indicates overall economic growth, Producer Price Index (PPI): Represents inflation at the producer level.
+
+![image](https://github.com/user-attachments/assets/78e5ca5d-ad3b-421d-be31-4a51218f8d43)
+
+   Integration Strategy: Web scraping from Investing.com and manually extracting Federal Reserve statements. Data will be collected for the 2015-2025 range to cover multiple economic cycles.
+
+![image](https://github.com/user-attachments/assets/bd5ce218-da41-4a8f-ba0a-21d3337c15b7)
+
+![image](https://github.com/user-attachments/assets/4e11ccc9-2616-4ab9-8003-94152994f61e)
+
+
+## High Level Design Architecture
+![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
+
+## Data Preprocessing & Feature Engineering
+   1. Missing data handling
+              - Interpolation
+              - Forward filling
+   2. Normalization and scaling
+   3. Outlier detection
+   4. Time series data preprocessing
+              - Date & Time Conversion
+              - Resampling
+  5. Feature Engineering
+  6. Correlation & Feature Selection
+
+
 ### Models Used
 - *ARIMA/SARIMA:* Statistical model for forecasting based on time series analysis.
 - *LSTM (Long Short-Term Memory):* Deep learning approach for capturing long-term dependencies in sequential data.
@@ -168,39 +199,6 @@ Data is collected from multiple sources:
 
 1. Limited data availability for real-time forecasting.
 2. The complexity of models increases the risk of overfitting.
-
-## Data Collection
-   A robust dataset is critical for accurate price forecasting. Our approach involves gathering data from multiple sources:
-![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
-
-• Gold Price Data (XAU/USD): We will collect historical XAU/USD OHLCV (Open, High, Low, Close, Volume) data across multiple timeframes (30-minute, hourly, 4-hourly, daily, weekly, and monthly) using the MetaTrader5 local terminal. This ensures we capture both short-term fluctuations and long-term trends. The data will cover the period from 2015 to 2025.
-
-• Macroeconomic Indicators: These fundamental factors drive long-term price movements and market sentiment. We will focus on: Interest Rate (Federal Reserve Rate): Determines monetary policy direction, Consumer Price Index (CPI): Reflects inflationary pressures, Non-Farm Payrolls (NFP): Measures employment trends and economic health, Personal Consumption Expenditures (PCE): Tracks consumer spending behavior, Gross Domestic Product (GDP): Indicates overall economic growth, Producer Price Index (PPI): Represents inflation at the producer level.
-
-![image](https://github.com/user-attachments/assets/78e5ca5d-ad3b-421d-be31-4a51218f8d43)
-
-   Integration Strategy: Web scraping from Investing.com and manually extracting Federal Reserve statements. Data will be collected for the 2015-2025 range to cover multiple economic cycles.
-
-![image](https://github.com/user-attachments/assets/bd5ce218-da41-4a8f-ba0a-21d3337c15b7)
-
-![image](https://github.com/user-attachments/assets/4e11ccc9-2616-4ab9-8003-94152994f61e)
-
-
-## High Level Design Architecture
-![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
-
-## Data Preprocessing & Feature Engineering
-   1. Missing data handling
-              - Interpolation
-              - Forward filling
-   2. Normalization and scaling
-   3. Outlier detection
-   4. Time series data preprocessing
-              - Date & Time Conversion
-              - Resampling
-  5. Feature Engineering
-  6. Correlation & Feature Selection
-
 <!-- ## Results and Analysis
 
 ## Conclusion
