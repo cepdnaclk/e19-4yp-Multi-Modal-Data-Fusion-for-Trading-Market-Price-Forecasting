@@ -43,10 +43,62 @@ DELETE THIS SAMPLE before publishing to GitHub Pages !!!
 This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
 ![Sample Image](./images/sample.png) 
 -->
+## Introduction
 
+*What is Trading?*
+
+- Buying and selling of financial assets in markets with the aim of making a profit.
+
+*Challenges in Traditional Trading*
+
+- Technical analysis alone fails to capture sudden market shifts.
+- Emotional trading leads to 70–90% losses among retail traders.
+
+---
+
+## Problem Statement
+
+Accurately predicting tradable moments and entry/exit points in Gold (XAU/USD) is extremely difficult due to its high volatility and sudden market shocks based on economic conditions.
+
+---
+
+## Research Objectives
+
+*General Objective:*  
+Develop a multi-modal machine learning framework that integrates:
+- Historical price data
+- Market trading volume
+- Macroeconomic factors
+- Technical indicators
+
+*Specific Objectives:*
+- Analyze the relationship between key macroeconomic factors in the United States towards fluctuations in the XAU/USD price.
+
+---
+
+## Macroeconomic Factors
+
+Macroeconomic indicators significantly influence markets, providing insights into a country's economic health and investor sentiment. Key factors include:
+- Interest Rate (Federal Reserve Rate)
+- Consumer Price Index (CPI)
+- Non-Farm Payrolls (NFP)
+- Personal Consumption Expenditures (PCE)
+- Gross Domestic Product (GDP)
+- Producer Price Index (PPI)
+
+---
 
 ## Abstract
-   This research proposes a machine learning approach to accurately distinguish genuine breakouts from false signals (fakeouts) in financial markets, focusing on gold (XAU/USD) trading. By combining historical price data, trading volume, and macroeconomic factors through multi-modal data fusion, the model aims to improve breakout classification and enhance trading decisions. Using data from platforms like MetaTrader 5 and Binance API, along with economic reports, the system employs deep learning models (e.g., LSTM or Transformer) to capture complex market patterns influenced by both technical and external economic factors. This approach seeks to help traders identify high-probability trading opportunities, reduce risks, and optimize profitability amid volatile market conditions.
+
+This research proposes a machine learning approach to distinguish genuine breakouts from false signals (fakeouts) in financial markets, with a focus on gold (XAU/USD) trading. 
+
+Key highlights:
+- **Data Fusion**: Combining historical price data, trading volume, and macroeconomic factors.
+- **Modeling**: Utilizing deep learning models like LSTM or Transformer.
+- **Goal**: Improve breakout classification and support better trading decisions.
+
+We aim to help traders identify high-probability opportunities and reduce risks amid market volatility.
+
 
 ## Background and Motivation
    Highlights the importance of stock market forecasting for reducing risk and improving trading strategies in a $110 trillion global market influenced by factors like interest rates, inflation, and employment data. Traditional technical analysis methods often fall short, leading to high retail trader losses. Advances in machine learning enable analysis of large datasets and complex patterns, especially when integrating macroeconomic indicators that can predict market shifts. The study aims to develop a comprehensive prediction framework that combines historical data, market patterns, and macroeconomic factors to enhance accuracy and provide traders with actionable, data-driven insights for better decision-making.
