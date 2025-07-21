@@ -152,6 +152,7 @@ Data is collected from multiple sources:
 - *ARIMA/SARIMA:* Statistical model for forecasting based on time series analysis.
 - *LSTM (Long Short-Term Memory):* Deep learning approach for capturing long-term dependencies in sequential data.
 - *XGBoost:* Tree-based ensemble model, capturing complex patterns from structured data.
+![image](https://github.com/user-attachments/assets/3fdd6b02-968c-4048-9c20-d61e53ad37cf)
 
 ---
 
