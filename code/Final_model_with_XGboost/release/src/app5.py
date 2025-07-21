@@ -4,10 +4,10 @@ from bokeh.models import ColumnDataSource, DatetimeTickFormatter, HoverTool, Sel
 from bokeh.layouts import column
 from bokeh.server.server import Server
 from bokeh.io import curdoc
+from scipy.signal import savgol_filter
 
 def get_data(timeframe):
     try:
-        # Select CSV based on timeframe
         filename_map = {
             '30min': 'xauusd_m30_full_predictions.csv',
             '1hour': 'xauusd_1H_full_predictions.csv',
@@ -21,12 +21,18 @@ def get_data(timeframe):
         if 'time' not in df.columns or 'actual_price' not in df.columns or 'predicted_price' not in df.columns:
             raise ValueError(f"CSV file {filename} must contain 'time', 'actual_price', and 'predicted_price'")
         df['time'] = pd.to_datetime(df['time'])
+
+        # Apply smoothing only for 30min and 1hour views
+        if timeframe in ['30min', '1hour']:
+            df['actual_price'] = savgol_filter(df['actual_price'], window_length=9, polyorder=2)
+
         if df.empty:
             raise ValueError(f"No data found in {filename}")
         return df
     except Exception as e:
         print(f"Error fetching data: {e}")
         raise
+
 
 # Define source as a global variable
 source = None
