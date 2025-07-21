@@ -200,12 +200,12 @@ Data is collected from multiple sources:
 
 1. Limited data availability for real-time forecasting.
 2. The complexity of models increases the risk of overfitting.
-<!-- ## Results and Analysis
+<!-- ## Results and Analysis-->
 
-## Conclusion
+<!--## Conclusion-->
 
-## Publications
-[//]: # "Note: Uncomment each once you uploaded the files to the repository" -->
+<!--## Publications-->
+<!--[//]: # "Note: Uncomment each once you uploaded the files to the repository" -->
 
 <!-- 1. [Semester 7 report](./) -->
 <!-- 2. [Semester 7 slides](./) -->
