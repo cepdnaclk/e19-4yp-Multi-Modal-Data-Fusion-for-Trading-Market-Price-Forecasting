@@ -107,15 +107,23 @@ We aim to help traders identify high-probability opportunities and reduce risks 
 ## Research Methodology
    This multi-stage framework for breakout prediction is a comprehensive system that integrates multiple data-driven approaches to enhance trading accuracy. Each module plays a crucial role in processing and analyzing different aspects of financial data, ensuring a well-rounded predictive model. The structured interaction between trend analysis, volume assessment, macroeconomic influences, and support/resistance classification enables the identification of high-confidence trading signals. By leveraging machine learning and real-time market insights, this system provides traders with a powerful tool to differentiate between real breakouts and fakeouts, improving profitability and risk management.
 
-### Data Collection
+## Data Collection
 
 Data is collected from multiple sources:
 - *Macroeconomic Indicators* from Federal Reserve Statements, Investing.com (2018-2025)
 - *XAU/USD Price & Trading Volume* through MetaTrader 5 API, IC Market Broker
 
-### Data Preprocessing & Feature Engineering
-- Handling missing data, normalization, scaling, and outlier detection
-- Feature engineering to create new data features and perform correlation/feature selection
+## Data Preprocessing & Feature Engineering
+   1. Missing data handling
+              - Interpolation
+              - Forward filling
+   2. Normalization and scaling
+   3. Outlier detection
+   4. Time series data preprocessing
+              - Date & Time Conversion
+              - Resampling
+  5. Feature Engineering
+  6. Correlation & Feature Selection
 
 ![image](https://github.com/user-attachments/assets/b5c70746-40e8-4829-bee0-0574fd6200b3)
 
@@ -133,20 +141,7 @@ Data is collected from multiple sources:
 
 
 ## High Level Design Architecture
-![image](https://github.com/user-attachments/assets/9b8eefca-db8a-41fe-af5d-1e4e24cac0e8)
-
-## Data Preprocessing & Feature Engineering
-   1. Missing data handling
-              - Interpolation
-              - Forward filling
-   2. Normalization and scaling
-   3. Outlier detection
-   4. Time series data preprocessing
-              - Date & Time Conversion
-              - Resampling
-  5. Feature Engineering
-  6. Correlation & Feature Selection
-
+![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e)
 
 ### Models Used
 - *ARIMA/SARIMA:* Statistical model for forecasting based on time series analysis.
