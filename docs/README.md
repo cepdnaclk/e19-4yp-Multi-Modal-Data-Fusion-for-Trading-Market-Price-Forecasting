@@ -141,7 +141,10 @@ Data is collected from multiple sources:
 
 
 ## High Level Design Architecture
-![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e)
+<-- ![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e) -->
+<p style="text-align: center;">
+  <img src="https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e" width="800" height="400"/>
+</p>
 
 
 ### Models Used
