@@ -141,10 +141,7 @@ Data is collected from multiple sources:
 
 
 ## High Level Design Architecture
-<-- ![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e) -->
-<p style="text-align: center;">
-  <img src="https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e" width="800" height="400"/>
-</p>
+<img src="https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e" width="800" height="400"/>
 
 
 ### Models Used
@@ -165,13 +162,15 @@ Data is collected from multiple sources:
 
 ## Model Performance
 
-### ARIMA vs SARIMA Model Comparison
-![image](https://github.com/user-attachments/assets/6a14ce4b-f213-4d2d-9736-889dcc43c91c)
+#### ARIMA vs SARIMA Model Comparison
+<img src="https://github.com/user-attachments/assets/6a14ce4b-f213-4d2d-9736-889dcc43c91c" width="400"/>
 
-### LSTM Model
-![image](https://github.com/user-attachments/assets/e954e71e-a552-41f5-954b-e2fa68527a8d)
+#### LSTM Model
+<img src="https://github.com/user-attachments/assets/e954e71e-a552-41f5-954b-e2fa68527a8d" width="400" />
 
-### XGBoost Model
+
+#### XGBoost Model
+
 ![image](https://github.com/user-attachments/assets/d14fe5e4-e7f0-4e4b-af86-af1d5572ca00)
 
 ---
