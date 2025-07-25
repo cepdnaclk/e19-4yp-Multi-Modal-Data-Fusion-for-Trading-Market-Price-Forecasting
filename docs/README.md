@@ -143,6 +143,9 @@ Data is collected from multiple sources:
 ## High Level Design Architecture
 ![image](https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e)
 
+<img src="https://github.com/user-attachments/assets/9c4c2121-c026-451b-9d77-c6f4b068128e" width="600" height="400"/>
+
+
 ### Models Used
 - *ARIMA/SARIMA:* Statistical model for forecasting based on time series analysis.
 - *LSTM (Long Short-Term Memory):* Deep learning approach for capturing long-term dependencies in sequential data.
