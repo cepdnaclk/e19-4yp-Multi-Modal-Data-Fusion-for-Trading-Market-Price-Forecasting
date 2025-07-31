@@ -11,6 +11,8 @@ title:
 
 # Multi-Modal Data Fusion for Trading Market Price Forecasting
 
+## "Risk comes from not knowing what you’re doing." – Warren Buffett
+
 #### Team
 
 - E/19/278, Perera A.P.T.T., [email](mailto:e19452@eng.ac.lk)
@@ -33,8 +35,7 @@ title:
 7. [Research Methodology](#research-methodology)
 8. [Data Collection](#data-collection)
 9. [High Level Design Architecture](#high-level-design-architecture)
-10. [Data Preprocessing & Feature Engineering](#data-preprocessing-&-feature-engineering)
-11. [Links](#links)
+10. [Links](#links)
 
 ---
 
@@ -43,6 +44,7 @@ DELETE THIS SAMPLE before publishing to GitHub Pages !!!
 This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
 ![Sample Image](./images/sample.png) 
 -->
+
 ## Introduction
 
 *What is Trading?*
@@ -185,19 +187,14 @@ Data is collected from multiple sources:
 
 ## Future Research Directions
 
-1. Regime‑Aware Forecasting
-        Build models that can highly identify different market conditions 
+1. Analysis of ICT Strategies
+Conduct a detailed evaluation of Inner Circle Trader (ICT) concepts to assess their effectiveness in various market conditions and integrate them into algorithmic trading models.
 
-2. Multi‑Step, Feature‑First Pipelines
-        Generalize the two‑stage approach
+2. Integration of News and Social Media Sentiment
+Incorporate real‑time news feeds and social‑media sentiment analysis into predictive models to capture market reactions to macroeconomic events and breaking news.
 
-3. Combine News Sentiments
-        Integrate streaming news, social‑media sentiment, and order‑book signals
-
-4. One‑Step LSTM Strengths & Limits
-        Deploy separate LSTMs per forecast horizon (micro‑structure vs. longer term).
-
-5. Risk Controls - Trading systems with stop‑loss rules
+2. Enhanced Risk Control Mechanisms
+Implement advanced risk‑management features such as dynamic stop‑loss rules, position‑sizing algorithms, and volatility‑adjusted exposure limits to improve capital preservation.
 
 ---
 
